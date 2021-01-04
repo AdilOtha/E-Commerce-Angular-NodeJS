@@ -1,0 +1,80 @@
+<!--================ Start Header Menu Area =================-->
+<header class="header_area">
+    <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand logo_h" href="index.html"><img src="/assets/img/logo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+                        <li class="nav-item active"><a class="nav-link" routerLink="/">Home</a></li>
+                        <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">Hot Deals</a>
+                            <!-- <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li>
+                                <li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li>
+                                <li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
+                                <li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>
+                            </ul> -->
+                        </li>
+                        <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link">Categories</a>
+                            <!-- <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                                <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+                            </ul> -->
+                        </li>
+                        <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link">Contact Us</a>
+                            <!-- <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                                <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+                                <li class="nav-item"><a class="nav-link" href="tracking-order.html">Tracking</a></li>
+                            </ul> -->
+                        </li>
+                    </ul>
+
+                    <ul class="nav-shop">
+                        <!-- <li class="nav-item"><button><i class="ti-search"></i></button></li> -->
+                        <div class="btn-group" dropdown>
+                            <li class="nav-item"><button dropdownToggle aria-controls="dropdown-animated" class="btn"><i
+                                        class="ti-shopping-cart"></i>
+                                    <span class="nav-shop__circle">{{cartData.data[0].numInCart !=0 ?
+                                        cartData.data.length : 0}}</span></button>
+                                <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu dropdown-menu-right"
+                                    role="menu" aria-labelledby="button-animated">
+                                    <li class="mx-auto" role="menuitem"><a class="dropdown-item" routerLink="/cart">View
+                                            Cart</a>
+                                    </li>
+                                    <li class="mx-auto" role="menuitem"><a class="dropdown-item"
+                                            routerLink="/checkout">Checkout</a>
+                                    </li>
+                                    <ng-container *ngIf="cartData.data[0].numInCart!=0">
+                                        <li *ngFor="let c of cartData.data; let i=index;" class="mx-auto"
+                                            role="menuitem"><a class="dropdown-item">{{c.product.name}} |
+                                                {{c.numInCart}} x {{c.product?.price | currency: 'USD'}}
+                                                <button (click)="cartService.DeleteProductFromCart(i)"><i
+                                                        class="ti-trash"></i></button></a>
+                                        </li>
+                                    </ng-container>
+                                </ul>
+                            </li>
+                        </div>
+                        <li class="nav-item"><span>{{cartTotal | currency : 'USD'}}</span></li>
+                        <!-- <li class="nav-item"><a class="button button-header" href="#">Buy Now</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<!--================ End Header Menu Area =================-->
