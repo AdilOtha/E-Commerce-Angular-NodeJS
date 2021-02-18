@@ -1,9 +1,9 @@
 var mysql = require('mysql');
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'ECommerce'
+    host: 'johnny.heliohost.org',
+    user: 'adilotha_5897',
+    password: 'ozymandias5897',
+    database: 'adilotha_ecomm_app'
   });
   
   // connect to database
