@@ -1,6 +1,6 @@
 var mysql = require('mysql');
 const db = mysql.createConnection({
-    host: 'ec2-52-8-112-233.us-west-1.compute.amazonaws.com',
+    host: 'sql12.freemysqlhosting.net',
     user: 'sql12393747',
     password: 'xsvPmVbP85',
     database: 'sql12393747'
